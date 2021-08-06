@@ -22,9 +22,9 @@ namespace FootballManagerAPI.Controllers
 
         // GET api/<FootballPlayerController>/5
         [HttpGet("{id}")]
-        public FootballPlayer Get(int id)
+        public Player Get(int id)
         {
-            return new FootballPlayer();
+            return new Player();
         }
 
         // POST api/<FootballPlayerController>

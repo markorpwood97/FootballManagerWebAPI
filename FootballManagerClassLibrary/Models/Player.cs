@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.Models
 {
-    public class FootballPlayer
+    public class Player
     {
         public int ID { get; set; } = 0;
         public string Name { get; set; }
         public string Surname { get; set; }
         public decimal Height { get; set; }
         public int GamesPlayed { get; set; }
-        public int GoalsScored { get; set; }
-        public int FootBallTeamID { get; set; }
+        public int PointsScored { get; set; }
+        public int TeamID { get; set; }
     }
 }

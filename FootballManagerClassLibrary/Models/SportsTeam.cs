@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.Models
 {
-    public class FootballTeam
+    public class SportsTeam
     {
         public int ID { get; set; } = 0;
         public string Name { get; set; }
