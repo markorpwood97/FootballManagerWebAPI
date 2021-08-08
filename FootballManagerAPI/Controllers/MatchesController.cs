@@ -37,5 +37,11 @@ namespace FootballManagerAPI.Controllers
         {
             _matchRepository.CreateMatch(value);
         }
+
+        [HttpPut("{matchId}/{homeTeamGoals}/{awayTeamGoals}")]
+        public void Put(int matchId, int homeTeamGoals, int awayTeamGoals)
+        {
+            _matchRepository.SetResult(matchId, homeTeamGoals + " - " + awayTeamGoals);
+        }
     }
 }

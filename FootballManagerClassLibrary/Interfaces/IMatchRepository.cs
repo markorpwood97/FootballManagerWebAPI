@@ -12,5 +12,6 @@ namespace FootballManagerClassLibrary.Interfaces
         List<Match> GetMatches();
         Match GetMatche(int id);
         void CreateMatch(Match match);
+        void SetResult(int matchId, string result);
     }
 }

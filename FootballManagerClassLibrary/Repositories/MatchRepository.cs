@@ -28,5 +28,11 @@ namespace FootballManagerClassLibrary.Repositories
             match.ID = _matches.Count + 1;
             _matches.Add(match);
         }
+
+        public void SetResult(int matchId, string result)
+        {
+            var match = _matches.Where(x => x.ID == matchId).FirstOrDefault();
+            match.Results = result;
+        }
     }
 }
