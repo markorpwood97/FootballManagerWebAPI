@@ -18,6 +18,11 @@ namespace FootballManagerClassLibrary.Repositories
             return _matches;
         }
 
+        public Match GetMatche(int id)
+        {
+            return _matches.Where(x => x.ID == id).FirstOrDefault();
+        }
+
         public void CreateMatch(Match match)
         {
             match.ID = _matches.Count + 1;

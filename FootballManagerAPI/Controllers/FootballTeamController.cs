@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.Models;
+using FootballManagerClassLibrary.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +15,34 @@ namespace FootballManagerAPI.Controllers
     [ApiController]
     public class FootballTeamController : ControllerBase
     {
+        IFootballTeamRepository _footballTeamRepository = new FootballTeamRepository();
+
         // GET: api/<FootballTeamController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<FootballTeam> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _footballTeamRepository.GetFootballTeams();
         }
 
         // GET api/<FootballTeamController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public FootballTeam Get(int id)
         {
-            return "value";
+            return _footballTeamRepository.GetFootballTeam(id);
         }
 
         // POST api/<FootballTeamController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(FootballTeam value)
         {
+            _footballTeamRepository.CreateFootballTeam(value);
         }
 
-        // PUT api/<FootballTeamController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // GET api/<FootballTeamController>/5
+        [HttpGet("{id}/players")]
+        public IEnumerable<FootballPlayer> GetTeamPlayers(int id)
         {
-        }
-
-        // DELETE api/<FootballTeamController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            return _footballTeamRepository.GetFootballTeamPlayers(id);
         }
     }
 }

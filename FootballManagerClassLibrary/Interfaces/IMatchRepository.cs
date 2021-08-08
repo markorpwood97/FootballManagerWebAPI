@@ -10,6 +10,7 @@ namespace FootballManagerClassLibrary.Interfaces
     public interface IMatchRepository
     {
         List<Match> GetMatches();
+        Match GetMatche(int id);
         void CreateMatch(Match match);
     }
 }

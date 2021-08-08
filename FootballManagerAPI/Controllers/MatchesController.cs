@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.Models;
+using FootballManagerClassLibrary.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +15,27 @@ namespace FootballManagerAPI.Controllers
     [ApiController]
     public class MatchesController : ControllerBase
     {
+        IMatchRepository _matchRepository = new MatchRepository();
+
         // GET: api/<MatchesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Match> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _matchRepository.GetMatches();
         }
 
         // GET api/<MatchesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Match Get(int id)
         {
-            return "value";
+            return _matchRepository.GetMatche(id);
         }
 
         // POST api/<MatchesController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(Match value)
         {
-        }
-
-        // PUT api/<MatchesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<MatchesController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            _matchRepository.CreateMatch(value);
         }
     }
 }

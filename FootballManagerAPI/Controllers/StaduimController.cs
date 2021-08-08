@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FootballManagerClassLibrary.Models;
+using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.Repositories;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +15,34 @@ namespace FootballManagerAPI.Controllers
     [ApiController]
     public class StaduimController : ControllerBase
     {
+        IStaduimRepository _staduimRepository = new StaduimRepository();
+
         // GET: api/<StaduimController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<Staduim> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _staduimRepository.GetStaduims();
         }
 
         // GET api/<StaduimController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Staduim Get(int id)
         {
-            return "value";
+            return _staduimRepository.GetStaduim(id);
         }
 
         // POST api/<StaduimController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post(Staduim value)
         {
+            _staduimRepository.CreateStaduim(value);
         }
 
         // PUT api/<StaduimController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{staduimId}/{teamId}")]
+        public void Put(int staduimId, int teamId)
         {
-        }
-
-        // DELETE api/<StaduimController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            _staduimRepository.SetStaduimTeam(staduimId, teamId);
         }
     }
 }
