@@ -1,4 +1,5 @@
 ﻿using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.MemoryDB;
 using FootballManagerClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -12,11 +13,7 @@ namespace FootballManagerClassLibrary.Repositories
     {
         IFootballPlayerRepository _footballPlayerRepository = new FootballPlayerRepository();
 
-        private List<FootballTeam> _footballTeams = new List<FootballTeam>()
-        {
-            new FootballTeam() { ID = 1, Name = "Manchester United", Location = "Manchester, United Kingdom" },
-            new FootballTeam() { ID = 2, Name = "Chelsea", Location = "Chelsea, London, United Kingdom" }
-        };
+        private List<FootballTeam> _footballTeams = InMemoryDB.FootballTeams;
 
         public List<FootballTeam> GetFootballTeams()
         {

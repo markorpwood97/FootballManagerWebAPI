@@ -1,4 +1,5 @@
 ﻿using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.MemoryDB;
 using FootballManagerClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,7 @@ namespace FootballManagerClassLibrary.Repositories
 {
     public class FootballPlayerRepository : IFootballPlayerRepository
     {
-        private List<FootballPlayer> _footballPlayers = new List<FootballPlayer>()
-        {
-            new FootballPlayer() { ID = 1, Name = "", Surname = "", Height = (decimal)1.84, GamesPlayed = 0, PointsScored = 0, FootballTeamID = 1 }
-        };
+        private List<FootballPlayer> _footballPlayers = InMemoryDB.FootballPlayers;
 
         public List<FootballPlayer> GetFootballPlayers()
         {
@@ -29,6 +27,12 @@ namespace FootballManagerClassLibrary.Repositories
         {
             footballPlayer.ID = _footballPlayers.Count + 1;
             _footballPlayers.Add(footballPlayer);
+        }
+
+        public void SetFootballPlayerTeam(int footballPlayerId, int footballTeamId)
+        {
+            var footballPlayer = _footballPlayers.Where(x => x.ID == footballPlayerId).FirstOrDefault();
+            footballPlayer.FootballTeamID = footballTeamId;
         }
     }
 }

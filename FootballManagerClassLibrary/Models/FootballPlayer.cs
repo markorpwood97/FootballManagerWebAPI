@@ -13,7 +13,7 @@ namespace FootballManagerClassLibrary.Models
         public string Surname { get; set; }
         public decimal Height { get; set; }
         public int GamesPlayed { get; set; }
-        public int PointsScored { get; set; }
+        public int GoalsScored { get; set; }
         public int FootballTeamID { get; set; }
     }
 }

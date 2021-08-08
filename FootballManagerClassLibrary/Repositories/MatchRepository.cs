@@ -1,4 +1,5 @@
 ﻿using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.MemoryDB;
 using FootballManagerClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -10,20 +11,17 @@ namespace FootballManagerClassLibrary.Repositories
 {
     public class MatchRepository : IMatchRepository
     {
-        private List<Match> _matches = new List<Match>()
+        private List<Match> _matches = InMemoryDB.Matches;
+
+        public List<Match> GetMatches()
         {
-            new Match() { ID = 1, Date = new DateTime(2021, 12, 01), HomeTeamID = 1, AwayTeamID = 2 }
-        };
+            return _matches;
+        }
 
         public void CreateMatch(Match match)
         {
             match.ID = _matches.Count + 1;
             _matches.Add(match);
-        }
-
-        public List<Match> GetMatches()
-        {
-            return _matches;
         }
     }
 }

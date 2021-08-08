@@ -12,5 +12,6 @@ namespace FootballManagerClassLibrary.Interfaces
         List<FootballPlayer> GetFootballPlayers();
         FootballPlayer GetFootballPlayer(int id);
         void CreateFootballPlayer(FootballPlayer footballPlayer);
+        void SetFootballPlayerTeam(int footballPlayer, int footballTeam);
     }
 }

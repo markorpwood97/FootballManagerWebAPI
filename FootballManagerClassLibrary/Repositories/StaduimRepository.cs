@@ -1,4 +1,5 @@
 ﻿using FootballManagerClassLibrary.Interfaces;
+using FootballManagerClassLibrary.MemoryDB;
 using FootballManagerClassLibrary.Models;
 using System;
 using System.Collections.Generic;
@@ -10,11 +11,7 @@ namespace FootballManagerClassLibrary.Repositories
 {
     public class StaduimRepository : IStaduimRepository
     {
-        private List<Staduim> _staduims = new List<Staduim>()
-        {
-            new Staduim() { ID = 1, Name = "Old Trafford", FootballTeamID = 1 },
-            new Staduim() { ID = 2, Name = "Stamford Bridge", FootballTeamID = 2 }
-        };
+        private List<Staduim> _staduims = InMemoryDB.Staduims;
 
         public List<Staduim> GetStaduims()
         {
