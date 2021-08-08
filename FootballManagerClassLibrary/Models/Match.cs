@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.Models
 {
-    public class Matches
+    public class Match
     {
         public int ID { get; set; }
         public DateTime Date { get; set; }

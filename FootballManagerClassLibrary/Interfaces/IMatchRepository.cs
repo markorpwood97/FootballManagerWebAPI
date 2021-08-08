@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.Interfaces
 {
-    public interface IPlayer
+    public interface IMatchRepository
     {
-        List<Player> GetPlayers();
-        Player GetPlayer(int id);
+        List<Match> GetMatches();
+        void CreateMatch(Match match);
     }
 }

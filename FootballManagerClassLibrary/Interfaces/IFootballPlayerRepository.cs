@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.Interfaces
 {
-    public interface ISportsTeam
+    public interface IFootballPlayerRepository
     {
-        List<SportsTeam> GetSportsTeams();
-        SportsTeam GetSportsTeam(int id);
-        List<Player> GetTeamsPlayers(int id);
+        List<FootballPlayer> GetFootballPlayers();
+        FootballPlayer GetFootballPlayer(int id);
+        void CreateFootballPlayer(FootballPlayer footballPlayer);
     }
 }

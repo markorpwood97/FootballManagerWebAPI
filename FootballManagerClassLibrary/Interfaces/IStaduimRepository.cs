@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.Interfaces
 {
-    public interface IMatches
+    interface IStaduimRepository
     {
-        List<Matches> GetMatches();
+        List<Staduim> GetStaduims();
+        Staduim GetStaduim(int id);
+        void CreateStaduim(Staduim staduim);
     }
 }
