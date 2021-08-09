@@ -1,0 +1,47 @@
+
+Open Postman App.
+Below are methods which can be used within Postman while the Football Manager API is running with the corresponding method type.
+
+Football Players:
+Get: https://localhost:44334/api/footballplayer
+This is used to get all players in the db.
+Get: https://localhost:44334/api/footballplayer/1
+1 can be replaced with any number that correlates to an ID number of any of the players and will return that specific player information.
+Post: https://localhost:44334/api/footballplayer
+In Postman you will need to set the body of the request to create a new player. The following fields will be used in the body of the request.
+	Name, Surname, Height, GamesPlayed, GoalsScored
+Put: https://localhost:44334/api/footballplayer/1/2
+This will need to be run through postman using Put. This is to set or update a players team. The first number is the Football Players ID, the second number is the Team ID.
+
+Football Team:
+Get: https://localhost:44334/api/footballTeam
+This gets the full list of Teams in the db.
+Get: https://localhost:44334/api/footballTeam/1
+1 can be repaced with any number that correlates to an ID number of any of the Teams, this will return a single teams information.
+Post: https://localhost:44334/api/footballTeam
+In Postman you will need to set the body of the request to create a new team. The following fields will be used in the body of the request.
+	Name, Location
+Get: https://localhost:44334/api/footballTeam/1/players
+Will fetch all players for the team specified, 1 can be replaced by the Id of the team you want the players from.
+
+Staduim:
+Get: https://localhost:44334/api/staduim
+This gets the full list of staduim with their information
+Get: https://localhost:44334/api/staduim/1
+1 can be repaced with any number that correlates to an ID number of any of the Staduims, this will return a single staduim information.
+Post: https://localhost:44334/api/staduim
+In Postman you will need to set the body of the request to create a new staduim. The following fields will be used in the body of the request.
+	Name
+Put: https://localhost:44334/api/staduim/5/1
+This will need to run through Postman using the Put. This will update the staduim's designated team, the 5 represents the staduims id and the 1 represents the team id.
+
+Matches:
+Get: https://localhost:44334/api/matches
+This is used to get all match information.
+Get: https://localhost:44334/api/matches/1
+1 can be replaced with any number that correlates to an ID number of any of the matches and will return that specific match information.
+Post: https://localhost:44334/api/matches
+In Postman you will need to set the body of the request to create a new match. The following fields will be used in the body of the request.
+	Date, HomeTeamID, AwayTeamID
+Put: https://localhost:44334/api/matches/1/3/2
+This will need to run through Postman using the Put. This will update the matches results, the 1 represents the match id, the 3 represents the home team goals, the 2 represents the away team goals which will update the results of the match.

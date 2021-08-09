@@ -1,0 +1,6 @@
+An obstacle I encountered was that I originally set the repository values in the constructor but each time an API was called the class 
+would be re-instantiated and the values would be reset to the values from the constructor.
+This was an issue as I could call Post and Put methods but when calling the Get methods I would not be able to see the changes.
+
+The solution I found to resolve this was to create another static class that I stored all the values of each of the models.
+By doing this I would not need to re-instantiated the class which would then show any new records that I had created or updates made.

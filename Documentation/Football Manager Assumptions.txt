@@ -1,0 +1,16 @@
+Assumptions for football manager assignment:
+
+1. Will need 3 Tables in the database
+	a. Football Player
+		Needs one to many link to Football Team
+	b. Football Team
+		Needs Many to Many relationship to Staduim
+	c. Staduim
+		One to one relationship with football team
+	
+2. Methods needed
+	a. Create Football Player
+	b. Create Football Team
+	c. Add Football Player to Football Team
+	d. Be able to move player to new team
+	e. Add football team to staduim

@@ -1,0 +1,7 @@
+List of Resources:
+How to use .Net Web API
+https://www.youtube.com/watch?v=nG3yRTPY5wU
+How to Post with PostMan
+https://www.youtube.com/watch?v=vN9NRqv7xmY
+Read article to see how to create Unit tests
+https://docs.microsoft.com/en-us/aspnet/web-api/overview/testing-and-debugging/unit-testing-with-aspnet-web-api

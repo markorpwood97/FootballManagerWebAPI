@@ -1,0 +1,17 @@
+Solution Design:
+My application consists of the projects, one for the Web API, a Class Library, a Unit test.
+I went with this design for future use so that the core methods can be re-used in any applications.
+The class library can be attached to another project that could then use these methods.
+
+DB Design:
+I put the football_team_id on the football player table to allow for many football players per team.
+I have put the football_team_id on the Staduim which would allow for a one to one relationship with the Team.
+
+Interface Design:
+For each of the tables in the model I have made a repository class which has all the methods to Get, Create, Update information needed,
+Each of the repository methods I have created and inherited an interface. By doing this I would be able create the methods needed to an actual db 
+	but can use these methods in the rest of the application in the meantime.
+
+In Memory DB Design:
+I created a class with static properties for each of the databases. 
+	I did it this way to not re-instantiate the class each API call which would reset the values.

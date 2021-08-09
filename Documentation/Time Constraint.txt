@@ -1,0 +1,9 @@
+Time taken to complete: +/- 6 Hours
+
+If I had more time I would have done more research in how to structure dependency injection with web api calls as 
+I would have liked to inject the Football Players in the Football Teams.
+I would have liked to put a lot more checks in to make sure that the right information was given when posting information.
+
+I would have liked to put a table for Position and put the position on the player table. 
+Then can run reports to check the layout of a team that you would be able to see what positions still need to be filled to make a full team.
+I would also like to sync with SQL to use an actaul DB instead of using in memory that would be restarted every time the application is restarted.
