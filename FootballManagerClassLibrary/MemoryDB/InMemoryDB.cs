@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FootballManagerClassLibrary.MemoryDB
 {
-    static class InMemoryDB
+    public static class InMemoryDB
     {
         public static List<FootballPlayer> FootballPlayers = new List<FootballPlayer>()
         {
